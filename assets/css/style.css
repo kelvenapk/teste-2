@@ -1,0 +1,89 @@
+/* VARIÁVEES PARA TEMA CLARO / ESCURO */
+:root {
+    --font: 'Montserrat', sans-serif;
+    --radius: 12px;
+    --shadow: 0 8px 20px rgba(0,0,0,.08);
+    --transition: .3s ease;
+  }
+  [data-theme="light"] {
+    --bg: #f5f7fa;
+    --card: #ffffff;
+    --text: #222;
+    --primary: #c03;
+    --accent: #242d3c;
+  }
+  [data-theme="dark"] {
+    --bg: #121212;
+    --card: #1e1e1e;
+    --text: #e4e4e4;
+    --primary: #ff3344;
+    --accent: #697780;
+  }
+  
+  /* RESET */
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:var(--font);background:var(--bg);color:var(--text);transition:background .3s,color .3s;}
+  img{max-width:100%;display:block;}
+  a{color:var(--primary);text-decoration:none;}
+  
+  /* BOTÃO TEMA */
+  #theme-toggle{position:fixed;top:20px;right:20px;z-index:999;background:var(--card);border:none;border-radius:50%;width:48px;height:48px;font-size:1.3rem;cursor:pointer;box-shadow:var(--shadow);transition:transform .2s;}
+  #theme-toggle:hover{transform:scale(1.1);}
+  
+  /* NAV */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 5vw;background:var(--card);box-shadow:var(--shadow);}
+  nav .logo{height:40px;}
+  .nav-links a{margin-left:25px;font-weight:500;color:var(--text);transition:color .2s;}
+  .nav-links a:hover{color:var(--primary);}
+  
+  /* HERO */
+  #hero{height:80vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:0 5vw;background:linear-gradient(135deg,var(--accent) 0%,var(--primary) 100%);color:#fff;}
+  #hero h1{font-size:clamp(2rem,5vw,3.5rem);margin-bottom:15px;}
+  #hero p{font-size:1.1rem;margin-bottom:30px;max-width:600px;}
+  .btn{display:inline-block;background:#fff;color:var(--primary);padding:14px 32px;border-radius:var(--radius);font-weight:700;transition:transform .2s;}
+  .btn:hover{transform:translateY(-3px);}
+  
+  /* SEÇÕES */
+  section{padding:80px 5vw;max-width:1100px;margin:auto;}
+  h2{font-size:2rem;margin-bottom:40px;text-align:center;color:var(--primary);}
+  .cards,.cor-grid,.gallery{display:grid;gap:25px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+  
+  /* CARDS */
+  .card{background:var(--card);padding:30px;border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .2s;}
+  .card:hover{transform:translateY(-5px);}
+  .card h3{margin-bottom:10px;color:var(--accent);}
+  
+  /* CORES */
+  .cor-item{background:var(--cor);color:var(--txt);display:flex;align-items:center;justify-content:center;font-weight:700;border-radius:var(--radius);box-shadow:var(--shadow);height:100px;transition:transform .2s;}
+  .cor-item:hover{transform:scale(1.05);}
+  
+  /* GALERIA */
+  .gallery figure{overflow:hidden;border-radius:var(--radius);box-shadow:var(--shadow);transition:transform .2s;}
+  .gallery img{height:200px;object-fit:cover;width:100%;}
+  .gallery figure:hover{transform:scale(1.03);}
+  
+  /* FORM */
+  form{display:flex;flex-direction:column;gap:18px;max-width:450px;margin:auto;}
+  input,textarea{padding:14px;border:1px solid #ccc;border-radius:var(--radius);font-family:inherit;resize:vertical;}
+  button{background:var(--primary);color:#fff;padding:14px;border:none;border-radius:var(--radius);font-weight:700;cursor:pointer;transition:background .2s;}
+  button:hover{background:#a00;}
+  
+  /* FOOTER */
+  footer{text-align:center;padding:40px 5vw;background:var(--accent);color:#fff;}
+  .logo-footer{height:30px;margin-bottom:10px;}
+  footer a{color:#fff;}
+  
+  /* WHATSAPP */
+  .whatsapp-float{position:fixed;bottom:25px;right:25px;background:#25d366;color:#fff;width:60px;height:60px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.7rem;box-shadow:var(--shadow);transition:transform .2s;}
+  .whatsapp-float:hover{transform:scale(1.1);}
+  
+  /* ANIMAÇÃO */
+  [data-aos]{opacity:0;transform:translateY(20px);transition:all .6s;}
+  [data-aos].aos-animate{opacity:1;transform:translateY(0);}
+  
+  /* RESPONSIVE */
+  @media(max-width:600px){
+    .nav-links a{margin-left:15px;font-size:.9rem;}
+    #hero h1{font-size:2rem;}
+    section{padding:60px 5vw;}
+  }
